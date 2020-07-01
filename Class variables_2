@@ -1,0 +1,19 @@
+class ExampleClass:
+    varia = 1
+    def __init__(self, val):
+        ExampleClass.varia = val
+
+print(ExampleClass.__dict__)
+exampleObject = ExampleClass(2)
+
+print(ExampleClass.__dict__)
+print(exampleObject.__dict__)
+
+
+############### Output #######################
+{'__module__': '__main__', 'varia': 1, '__init__': <function ExampleClass.__init__ at 0x7fc74a1c20d0>, '__dict__': <attribute '__dict__' of 'ExampleClass' objects>, '__weakref__': <attribute '__weakref__' of 'ExampleClass' objects>, '__doc__': None}
+{'__module__': '__main__', 'varia': 2, '__init__': <function ExampleClass.__init__ at 0x7fc74a1c20d0>, '__dict__': <attribute '__dict__' of 'ExampleClass' objects>, '__weakref__': <attribute '__weakref__' of 'ExampleClass' objects>, '__doc__': None}
+{}
+
+第三个为空 因为class里只有class variable which is varia， 没有instance variable。
+exampleObject.__dict__只检验instance variable
