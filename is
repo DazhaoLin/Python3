@@ -1,0 +1,34 @@
+class SampleClass:
+    def __init__(self, val):
+        self.val = val
+
+ob1 = SampleClass(0)
+ob2 = SampleClass(2)
+ob3 = ob1
+ob3.val += 1
+
+print(ob1 is ob2)
+print(ob2 is ob3)
+print(ob3 is ob1)
+print(ob1.val, ob2.val, ob3.val)
+
+str1 = "Mary had a little "
+str2 = "Mary had a little lamb"
+str1 += "lamb"
+
+print(str1 == str2, str1 is str2)
+
+
+
+################## Output ######################
+False
+False
+True
+1 2 1
+True False
+###############################################
+
+##################### Notes ###################
+variables don't store the objects themselves, but only the handles pointing to the internal Python memory.
+所以ob1 和 ob3 指向同一个内存块
+但st1 和 str2 不一样
