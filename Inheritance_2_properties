@@ -1,0 +1,43 @@
+# Testing properties: class variables
+class Super:
+    supVar = 1
+
+class Sub(Super):
+    subVar = 2
+
+obj = Sub()
+
+print(obj.subVar)
+print(obj.supVar)
+
+############## Output #################
+2
+1
+#######################################
+
+############## Notes ##################
+继承里面 即使同名的变量也不会改变父级的内容
+
+
+
+# Testing properties: instance variables
+class Super:
+    def __init__(self):
+        self.supVar = 11
+
+class Sub(Super):
+    def __init__(self):
+        super().__init__()
+        self.subVar = 12
+
+obj = Sub()
+
+print(obj.subVar)
+print(obj.supVar)
+############## Output #################
+12
+11
+#######################################
+
+############## Notes ##################
+同样适用于instance variable
