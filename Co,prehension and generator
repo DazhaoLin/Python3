@@ -1,0 +1,18 @@
+for v in [1 if x % 2 == 0 else 0 for x in range(10)]:
+    print(v, end=" ")
+print()
+
+for v in (1 if x % 2 == 0 else 0 for x in range(10)):
+    print(v, end=" ")
+print()
+
+
+
+################### Notes ############################
+看好第一个是中括号，第二个是小括号  The brackets make a comprehension, the parentheses make a generator.
+'generator' has no len()
+
+Note: the same appearance of the output doesn't mean that both loops work in the same way. 
+In the first loop, the list is created (and iterated through) as a whole - it actually exists when the loop is being executed.
+
+In the second loop, there is no list at all - there are only subsequent values produced by the generator, one by one.
