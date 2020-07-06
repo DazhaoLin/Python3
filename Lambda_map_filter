@@ -1,0 +1,52 @@
+################################### map ######################################
+map(fun, iter)
+fun : It is a function to which map passes each element of given iterable.
+iter : It is a iterable which is to be mapped.
+
+################################### end ######################################
+
+################################## No lambda #################################
+def printfunction(args, fun):
+	for x in args:
+		print('f(', x,')=', fun(x), sep='')
+
+def poly(x):
+	return 2 * x**2 - 4 * x + 2
+
+printfunction([x for x in range(-2, 3)], poly)
+
+
+
+########################## Use lambda: 删掉 poly()function #######################
+
+def printfunction(args, fun):
+	for x in args:
+		print('f(', x,')=', fun(x), sep='')
+
+printfunction([x for x in range(-2, 3)], lambda x: 2 * x**2 - 4 * x + 2)
+
+
+
+#####################################   eg2_map   ####################################
+list1 = [x for x in range(5)]
+list2 = list(map(lambda x: 2 ** x, list1))
+print(list2)
+for x in map(lambda x: x * x, list2):
+	print(x, end=' ')
+print()
+
+#####################################   Notes   ####################################
+function1(function2, list)
+list 是 function2 的入参
+
+
+###################################### eg3_filter ####################################
+from random import seed, randint
+
+seed()
+data = [ randint(-10,10) for x in range(5) ]
+filtered = list(filter(lambda x: x > 0 and x % 2 == 0, data))
+print(data)
+print(filtered)
+
+##################################### End #############################################
